@@ -1,0 +1,15 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CombinatorialAspectsSimplicialComplexesFoundationCanonicalLaneLean.BridgeLemmas
+import HautevilleHouse.CombinatorialAspectsSimplicialComplexesFoundationCanonicalLaneLean.GateLemmas
+
+namespace HautevilleHouse
+namespace CombinatorialAspectsSimplicialComplexesFoundationCanonicalLaneLean
+
+def ConstrainedSimplicialComplexClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_simplicial_complex_endgame (A : AdmissibleClass) : ConstrainedSimplicialComplexClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CombinatorialAspectsSimplicialComplexesFoundationCanonicalLaneLean
+end HautevilleHouse
